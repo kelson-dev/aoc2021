@@ -1,6 +1,4 @@
-using FluentAssertions;
 using System.Collections.Generic;
-using Xunit;
 
 namespace Tests.Day1
 {
