@@ -4,6 +4,7 @@ Run<Day1.Part1, int, int, IntegerLinesInput>();
 Run<Day1.Part2, int, int, IntegerLinesInput>();
 Run<Day2.Part1, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
 Run<Day2.Part2, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
+
 #region Functions
 static ImmutableHashSet<int> Days(string[] args)
 {
@@ -32,7 +33,6 @@ void Run<TSolution, TIn, TOut, TInputSource>()
         return;
 
     var output = default(TSolution).Evaluate(default(TInputSource).LoadFor(solution.InputDay, solution.InputPart));
-    string result = string.Join(" ", output);
-    Console.WriteLine($"Day {solution.InputDay} Part {solution.InputPart}: {result}");
+    Console.WriteLine($"Day {solution.InputDay} Part {solution.InputPart}: {output}");
 }
 #endregion

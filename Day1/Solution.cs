@@ -8,7 +8,7 @@ public readonly struct Part1 : ISolution<int, int>
     public int InputDay => 1;
     public int InputPart => 1;
 
-    public IEnumerable<int> Evaluate(IEnumerable<int> inputs)
+    public int Evaluate(IEnumerable<int> inputs)
     {
         int? previous = null;
         int increases = 0;
@@ -18,7 +18,7 @@ public readonly struct Part1 : ISolution<int, int>
             previous = input;
         }
 
-        yield return increases;
+        return increases;
     }
 }
 
@@ -42,5 +42,5 @@ public readonly struct Part2 : ISolution<int, int>
         }
     }
 
-    public IEnumerable<int> Evaluate(IEnumerable<int> inputs) => default(Part1).Evaluate(WindowSums(inputs));
+    public int Evaluate(IEnumerable<int> inputs) => default(Part1).Evaluate(WindowSums(inputs));
 }

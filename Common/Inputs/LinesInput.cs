@@ -15,3 +15,5 @@ public readonly struct LinesInput : IInputSource<LinesInput, string>
         }
     }
 }
+
+

@@ -7,12 +7,12 @@ public readonly struct Part1 : ISolution<SubCommand, int>
 {
     public int InputDay => 2;
 
-    public IEnumerable<int> Evaluate(IEnumerable<SubCommand> inputs)
+    public int Evaluate(IEnumerable<SubCommand> inputs)
     {
         (int horizontal, int depth) = (0, 0);
         foreach (var command in inputs)
             (horizontal, depth) = Apply(command, horizontal, depth);
-        yield return horizontal * depth;
+        return horizontal * depth;
     }
 
     public static (int horizontal, int depth) Apply(SubCommand command, int horizontal, int depth)
@@ -38,12 +38,12 @@ public readonly struct Part2 : ISolution<SubCommand, int>
 {
     public int InputDay => 2;
 
-    public IEnumerable<int> Evaluate(IEnumerable<SubCommand> inputs)
+    public int Evaluate(IEnumerable<SubCommand> inputs)
     {
         (int horizontal, int depth, int aim) = (0, 0, 0);
         foreach (var command in inputs)
             (horizontal, depth, aim) = Apply(command, horizontal, depth, aim);
-        yield return horizontal * depth;
+        return horizontal * depth;
     }
 
     public static (int horizontal, int depth, int aim) Apply(SubCommand command, int horizontal, int depth, int aim)
