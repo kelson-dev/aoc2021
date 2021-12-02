@@ -11,4 +11,13 @@ public static class EnumerableExtensions
     }
 
     public static IEnumerator<int> GetEnumerator(this Range range) => EnumerateRange(range).GetEnumerator();
+
+    public delegate bool TryMap<U, V>(U value, out V result);
+
+    public static IEnumerable<V> SelectWhere<U, V>(this IEnumerable<U> source, TryMap<U, V> map)
+    {
+        foreach (var value in source)
+            if (map(value, out var result))
+                yield return result;
+    }
 }
