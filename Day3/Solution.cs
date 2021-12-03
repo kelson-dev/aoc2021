@@ -33,16 +33,11 @@ public readonly record struct Part2 : ISolution<(int width, uint value), uint>
 
     private (HashSet<uint> mostCommon, HashSet<uint> leastCommon) Split(HashSet<uint> numbers, int bit)
     {
-        int set_count = 0;
         uint mask = 1u << bit;
+        var (set, unset) = (new HashSet<uint>(), new HashSet<uint>());
         foreach (var num in numbers)
-            set_count += (int)((num & mask) >> bit);
-        int unset_count = numbers.Count - set_count;
-        int common = set_count >= unset_count ? 1 : 0;
-        var (most, least) = (new HashSet<uint>(), new HashSet<uint>());
-        foreach (var num in numbers)
-            (((num & mask) >> bit ) == common ? most : least).Add(num);
-        return (most, least);
+            ((num & mask) == 0 ? unset : set).Add(num);
+        return set.Count >= unset.Count ? (set, unset) : (unset, set);
     }
 
     public uint Evaluate(IEnumerable<(int width, uint value)> inputs)
@@ -50,10 +45,7 @@ public readonly record struct Part2 : ISolution<(int width, uint value), uint>
         var numbers = new HashSet<uint>();
         var width = 0;
         foreach (var (bits, value) in inputs)
-        {
-            width = bits;
-            numbers.Add(value);
-        }
+            (width, _) = (bits, numbers.Add(value));
 
         var w = width - 1;
         var (o2, co2) = Split(numbers, w--);
