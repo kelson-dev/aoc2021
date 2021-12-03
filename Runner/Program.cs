@@ -4,6 +4,8 @@ Run<Day1.Part1, int, int, IntegerLinesInput>();
 Run<Day1.Part2, int, int, IntegerLinesInput>();
 Run<Day2.Part1, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
 Run<Day2.Part2, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
+Run<Day3.Part1, int[], uint, Day3.DigitArrayInput>();
+Run<Day3.Part2, (int, uint), uint, Day3.BinaryNumbersInput>();
 
 #region Functions
 static ImmutableHashSet<int> Days(string[] args)
