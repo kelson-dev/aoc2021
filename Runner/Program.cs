@@ -1,15 +1,17 @@
 ﻿var days = Days(args);
 
-Run<Day1.Part1, int, int, IntegerLinesInput>();
-Run<Day1.Part2, int, int, IntegerLinesInput>();
-Run<Day2.Part1, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
-Run<Day2.Part2, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
-Run<Day3.Part1, int[], uint, Day3.DigitArrayInput>();
-Run<Day3.Part2, (int, uint), uint, Day3.BinaryNumbersInput>();
-Run<Day4.Part1, Day4.BingoItem, int, Day4.BingoInput>();
-Run<Day4.Part2, Day4.BingoItem, int, Day4.BingoInput>();
-Run<Day5.Part1, Day5.LineSegment, int, Day5.LineSegmentsInput>();
-Run<Day5.Part2, Day5.LineSegment, int, Day5.LineSegmentsInput>();
+//Run<Day1.Part1, int, int, IntegerLinesInput>();
+//Run<Day1.Part2, int, int, IntegerLinesInput>();
+//Run<Day2.Part1, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
+//Run<Day2.Part2, Day2.SubCommand, int, Day2.SubmarineCommandsInput>();
+//Run<Day3.Part1, int[], uint, Day3.DigitArrayInput>();
+//Run<Day3.Part2, (int, uint), uint, Day3.BinaryNumbersInput>();
+//Run<Day4.Part1, Day4.BingoItem, int, Day4.BingoInput>();
+//Run<Day4.Part2, Day4.BingoItem, int, Day4.BingoInput>();
+//Run<Day5.Part1, Day5.LineSegment, int, Day5.LineSegmentsInput>();
+//Run<Day5.Part2, Day5.LineSegment, int, Day5.LineSegmentsInput>();
+Run<Day6.LampfishSim<Eighty>, ushort, ulong, CommaDelimitedDigitsInput>();
+Run<Day6.LampfishSim<TwoHundredFiftySix>, ushort, ulong, CommaDelimitedDigitsInput>();
 #region Functions
 static ImmutableHashSet<int> Days(string[] args)
 {
